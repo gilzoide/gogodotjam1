@@ -1,0 +1,10 @@
+- Jogo pra celular
+- Você é uma bolinha que anda pra um lado e pro outro sozinho, quica nas paredes e volta, estilo Pong
+- A fase anda sozinha, estilo Flappy Bird, então você bolinha se movimenta só pros lados (automaticamente) enquanto a fase vem passando
+- Tem obstáculos que, se trombar, você perde o jogo, bem runner infinito mesmo
+- Tem itens na fase que dão pontos (pode ser moeda, estrela, diamante, tanto faz), ir mais longe também dá mais ponto
+- Possivelmente a fase vai andando mais rápido conforme o jogo passa, por que não?
+- Hora que perde, o jogo te mostra quanto tempo durou, quantos pontos, essa coisa de sempre
+Agora a parte mais interessante, o input:
+- Você pode usar pinch (o gesto de dar zoom in/zoom out em mapas, com dois dedos indo um pra cada lado) pra aumentar ou diminuir sua bolinha (ou dar zoom in/zoom out na fase, não sei o que fica melhor, teria que testar)
+- Se você tá maior, tromba mais rápido na parede pra trocar de lado, consegue pegar itens mais fácil / trombar em obstáculos mais fácil
