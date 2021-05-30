@@ -11,6 +11,7 @@ func _input(event: InputEvent) -> void:
 
 
 func start() -> void:
+	_animation_player.get_animation("Hint").loop = true
 	_animation_player.play("Hint")
 
 
