@@ -9,6 +9,7 @@ func reset() -> void:
 
 
 func set_seconds(value: int) -> void:
+	value = int(max(0, value))
 	if value != seconds:
 		seconds = value
 		emit_signal("changed")

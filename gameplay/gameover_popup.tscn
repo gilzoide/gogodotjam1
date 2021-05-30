@@ -25,6 +25,7 @@ margin_right = 293.0
 margin_bottom = 193.0
 mouse_filter = 2
 theme = ExtResource( 1 )
+custom_constants/separation = 12
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -36,18 +37,24 @@ text = "🏁 🏁 🏁"
 align = 1
 
 [node name="CurrentTimer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 37.0
+margin_top = 45.0
 margin_right = 286.0
-margin_bottom = 70.0
+margin_bottom = 78.0
 mouse_filter = 2
 
-[node name="Icon" type="Label" parent="VBoxContainer/CurrentTimer"]
+[node name="GreaterIcon" type="Label" parent="VBoxContainer/CurrentTimer"]
 margin_right = 32.0
+margin_bottom = 33.0
+text = "📈"
+
+[node name="Icon" type="Label" parent="VBoxContainer/CurrentTimer"]
+margin_left = 36.0
+margin_right = 68.0
 margin_bottom = 33.0
 text = "⏲"
 
 [node name="Label" type="Label" parent="VBoxContainer/CurrentTimer"]
-margin_left = 36.0
+margin_left = 72.0
 margin_right = 286.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
@@ -55,18 +62,18 @@ text = "0:00"
 align = 2
 
 [node name="MaxTimer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 74.0
+margin_top = 90.0
 margin_right = 286.0
-margin_bottom = 107.0
+margin_bottom = 123.0
 mouse_filter = 2
 
 [node name="Icon" type="Label" parent="VBoxContainer/MaxTimer"]
-margin_right = 58.0
+margin_right = 59.0
 margin_bottom = 33.0
-text = "⏫⏲"
+text = "🔝⏲"
 
-[node name="CurrentTimer" type="Label" parent="VBoxContainer/MaxTimer"]
-margin_left = 62.0
+[node name="Label" type="Label" parent="VBoxContainer/MaxTimer"]
+margin_left = 63.0
 margin_right = 286.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
