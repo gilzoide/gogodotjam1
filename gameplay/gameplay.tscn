@@ -72,6 +72,7 @@ __meta__ = {
 [node name="PinchHint" parent="InputHintPosition" instance=ExtResource( 6 )]
 
 [node name="GameOverPopup" parent="." instance=ExtResource( 8 )]
+visible = false
 
 [connection signal="hit_mob" from="BallPosition/Ball" to="." method="_on_Ball_hit_mob"]
 [connection signal="timeout" from="SecondTimer" to="." method="_on_SecondTimer_timeout"]

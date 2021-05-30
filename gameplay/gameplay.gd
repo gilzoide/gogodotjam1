@@ -3,6 +3,7 @@ extends Control
 export(Vector2) var player_start = Vector2(0.5, 0.75)
 export(Resource) var score = preload("res://gameplay/gameplay_score.tres")
 
+onready var _gameover_popup = $GameOverPopup
 onready var _pinch_hint = $InputHintPosition/PinchHint
 onready var _player = $BallPosition/Ball
 onready var _second_timer = $SecondTimer
@@ -30,11 +31,12 @@ func start_game() -> void:
 	_second_timer.start()
 	_spawner.reset()
 	get_tree().paused = false
+	_gameover_popup.hide()
 
 
 func end_game() -> void:
 	reset_pre_game()
-	# TODO: tela de fim e restart
+	_gameover_popup.show()
 
 
 func _on_Ball_hit_mob(_mob) -> void:
