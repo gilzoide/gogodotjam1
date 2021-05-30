@@ -1,5 +1,5 @@
 tool
-extends ColorRect
+extends Control
 
 onready var _collision_polygon = $StaticBody2D/CollisionShape2D
 
@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _notification(what: int) -> void:
-	if what == NOTIFICATION_RESIZED:
+	if what == NOTIFICATION_RESIZED and _collision_polygon:
 		_refresh_shape()
 
 

@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://gameplay/fit_collision_to_control.gd" type="Script" id=1]
+[ext_resource path="res://textures/baiacu/novaparede.png" type="Texture" id=2]
 
-[node name="ParedeEsquerda" type="ColorRect"]
+[node name="ParedeEsquerda" type="TextureRect"]
 anchor_bottom = 1.0
-margin_right = 10.0
+margin_right = 50.0
+texture = ExtResource( 2 )
+stretch_mode = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -13,4 +16,4 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 0, 0, 10, 0, 10, 720, 0, 720 )
+polygon = PoolVector2Array( 0, 0, 50, 0, 50, 720, 0, 720 )

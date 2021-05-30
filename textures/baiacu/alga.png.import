@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/star.svg-20c89f24375010d572c8a8009c916cb1.stex"
+path="res://.import/alga.png-45a5937fef8f031d3f76147558c165a7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/star.svg"
-dest_files=[ "res://.import/star.svg-20c89f24375010d572c8a8009c916cb1.stex" ]
+source_file="res://textures/baiacu/alga.png"
+dest_files=[ "res://.import/alga.png-45a5937fef8f031d3f76147558c165a7.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

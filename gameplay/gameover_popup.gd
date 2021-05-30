@@ -12,7 +12,7 @@ onready var _highscore_label = $VBoxContainer/MaxTimer/Label
 
 
 func _ready() -> void:
-	if OS.is_userfs_persistent() and ResourceLoader.exists(highscore_save_path):
+	if ResourceLoader.exists(highscore_save_path):
 		var loaded = load(highscore_save_path)
 		if loaded is Score:
 			highscore = loaded

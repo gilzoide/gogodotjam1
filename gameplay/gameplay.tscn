@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://gameplay/gameplay.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/parede.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://gameplay/pinch_hint.tscn" type="PackedScene" id=6]
 [ext_resource path="res://main_theme.tres" type="Theme" id=7]
 [ext_resource path="res://gameplay/gameover_popup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://gameplay/alga.tscn" type="PackedScene" id=9]
 
 [node name="Gameplay" type="Control"]
 anchor_right = 1.0
@@ -32,15 +33,13 @@ __meta__ = {
 
 [node name="ParedeEsquerda" parent="." instance=ExtResource( 2 )]
 mouse_filter = 2
-color = Color( 0.647059, 0.717647, 0.952941, 1 )
 
 [node name="ParedeDireita" parent="." instance=ExtResource( 2 )]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -10.0
+margin_left = -50.0
 margin_right = 0.0
 mouse_filter = 2
-color = Color( 0.647059, 0.717647, 0.952941, 1 )
 
 [node name="TimerLabel" type="Label" parent="."]
 anchor_right = 1.0
@@ -55,6 +54,8 @@ __meta__ = {
 [node name="SecondTimer" type="Timer" parent="."]
 
 [node name="Spawner" parent="." instance=ExtResource( 5 )]
+margin_left = 75.0
+margin_right = -75.0
 mouse_filter = 2
 
 [node name="InputHintPosition" type="Control" parent="."]
@@ -72,6 +73,63 @@ __meta__ = {
 
 [node name="GameOverPopup" parent="." instance=ExtResource( 8 )]
 visible = false
+
+[node name="Algas" type="Control" parent="."]
+pause_mode = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_right = -50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Alga1" parent="Algas" instance=ExtResource( 9 )]
+margin_top = -64.0
+margin_right = 64.0
+
+[node name="Alga2" parent="Algas" instance=ExtResource( 9 )]
+margin_left = 71.0
+margin_top = -48.0
+margin_right = 119.0
+frame = 2
+
+[node name="Alga3" parent="Algas" instance=ExtResource( 9 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = -52.0
+margin_right = 53.0
+
+[node name="Alga6" parent="Algas" instance=ExtResource( 9 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -53.0
+margin_top = -52.0
+margin_right = -1.0
+
+[node name="Alga4" parent="Algas" instance=ExtResource( 9 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -134.0
+margin_top = -64.0
+margin_right = -70.0
+frame = 1
+
+[node name="Alga5" parent="Algas" instance=ExtResource( 9 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -48.0
 
 [connection signal="hit_mob" from="BallPosition/Ball" to="." method="_on_Ball_hit_mob"]
 [connection signal="timeout" from="SecondTimer" to="." method="_on_SecondTimer_timeout"]
