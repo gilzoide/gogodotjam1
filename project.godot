@@ -51,7 +51,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Go Godot Ball Growth Game"
-run/main_scene="res://ball.tscn"
+run/main_scene="res://gameplay/gameplay.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -60,7 +60,9 @@ GestureInputManager="*res://addons/Godot-Touch-Input-Manager/InputManager.gd"
 
 [display]
 
-window/handheld/orientation="sensor"
+window/size/width=480
+window/size/height=720
+window/handheld/orientation="sensor_portrait"
 
 [input_devices]
 
