@@ -61,9 +61,11 @@ mouse_filter = 2
 [node name="InputHintPosition" type="Control" parent="."]
 pause_mode = 2
 anchor_left = 0.5
-anchor_top = 0.8
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.8
+anchor_bottom = 1.0
+margin_top = -128.0
+margin_bottom = -128.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false

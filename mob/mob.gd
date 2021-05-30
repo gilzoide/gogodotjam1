@@ -6,8 +6,7 @@ onready var _sprite = $Sprite
 
 
 func _ready() -> void:
-	var size = _sprite.texture.get_size()
-	$VisibilityNotifier2D.rect = Rect2(-(size * 0.5), size)
+	$VisibilityNotifier2D.rect = _sprite.get_rect()
 
 
 func _on_screen_exited() -> void:
