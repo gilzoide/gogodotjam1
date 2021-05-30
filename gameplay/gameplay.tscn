@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://gameplay/gameplay.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/parede.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/ball.tscn" type="PackedScene" id=3]
 [ext_resource path="res://gameplay/label_timer.gd" type="Script" id=4]
 [ext_resource path="res://gameplay/spawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://gameplay/pinch_hint.tscn" type="PackedScene" id=6]
 
 [node name="Gameplay" type="Control"]
 anchor_right = 1.0
@@ -20,6 +21,7 @@ player_start = Vector2( 0.5, 0.7 )
 position = Vector2( 243.964, 397.176 )
 
 [node name="ParedeEsquerda" parent="." instance=ExtResource( 2 )]
+mouse_filter = 2
 color = Color( 0.647059, 0.717647, 0.952941, 1 )
 
 [node name="ParedeDireita" parent="." instance=ExtResource( 2 )]
@@ -27,6 +29,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -10.0
 margin_right = 0.0
+mouse_filter = 2
 color = Color( 0.647059, 0.717647, 0.952941, 1 )
 
 [node name="TimerLabel" type="Label" parent="."]
@@ -42,6 +45,21 @@ __meta__ = {
 [node name="SecondTimer" type="Timer" parent="."]
 
 [node name="Spawner" parent="." instance=ExtResource( 5 )]
+mouse_filter = 2
+
+[node name="PinchHintPosition" type="Control" parent="."]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.7
+anchor_right = 0.5
+anchor_bottom = 0.7
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PinchHint" parent="PinchHintPosition" instance=ExtResource( 6 )]
 
 [connection signal="hit_mob" from="Ball" to="." method="_on_Ball_hit_mob"]
 [connection signal="timeout" from="SecondTimer" to="." method="_on_SecondTimer_timeout"]
+[connection signal="pinch_detected" from="PinchHintPosition/PinchHint" to="." method="_on_PinchHint_pinch_detected" flags=6]

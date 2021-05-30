@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://mob/Star.svg" type="Texture" id=1]
+[ext_resource path="res://textures/star.svg" type="Texture" id=1]
 [ext_resource path="res://mob/mob.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
