@@ -1,7 +1,7 @@
 extends Control
 
-export(Vector2) var player_start = Vector2(0.5, 0.75)
 export(Resource) var score = preload("res://gameplay/gameplay_score.tres")
+export(float) var gameover_restart_delay = 1
 
 onready var _gameover_popup = $GameOverPopup
 onready var _pinch_hint = $InputHintPosition/PinchHint
@@ -19,10 +19,12 @@ func _on_SecondTimer_timeout() -> void:
 	score.seconds += 1
 
 
-func reset_pre_game() -> void:
+func reset_pre_game(delay = 0) -> void:
 	get_tree().paused = true
-	_pinch_hint.start()
+	if delay > 0:
+		yield(get_tree().create_timer(delay), "timeout")
 	_pinch_hint.connect("pinch_detected", self, "_on_PinchHint_pinch_detected", [], CONNECT_ONESHOT)
+	_pinch_hint.start()
 
 
 func start_game() -> void:
@@ -35,7 +37,7 @@ func start_game() -> void:
 
 
 func end_game() -> void:
-	reset_pre_game()
+	reset_pre_game(gameover_restart_delay)
 	_gameover_popup.show()
 
 
