@@ -4,14 +4,8 @@
 [ext_resource path="res://gameplay/gameover_popup.gd" type="Script" id=2]
 
 [node name="GameOverPopup" type="PanelContainer"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -150.0
-margin_top = -100.0
-margin_right = 150.0
-margin_bottom = 100.0
+margin_right = 300.0
+margin_bottom = 200.0
 mouse_filter = 2
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
