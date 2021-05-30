@@ -43,4 +43,5 @@ __meta__ = {
 
 [node name="Spawner" parent="." instance=ExtResource( 5 )]
 
+[connection signal="hit_mob" from="Ball" to="." method="_on_Ball_hit_mob"]
 [connection signal="timeout" from="SecondTimer" to="." method="_on_SecondTimer_timeout"]

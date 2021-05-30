@@ -16,6 +16,12 @@ func spawn_mob() -> void:
 	var _err = mob.connect("screen_exited", self, "_on_mob_screen_exited", [mob])
 
 
+func reset() -> void:
+	for mob in get_children():
+		remove_child(mob)
+		mob.queue_free()
+
+
 func _on_mob_screen_exited(mob: Node2D) -> void:
 	remove_child(mob)
 	mob.queue_free()

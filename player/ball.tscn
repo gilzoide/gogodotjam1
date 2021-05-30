@@ -10,6 +10,7 @@ radius = 16.0
 collision_layer = 3
 script = ExtResource( 1 )
 speed = 200.0
+size = 50.0
 max_size = 300.0
 
 [node name="Sprite" type="Sprite" parent="."]
