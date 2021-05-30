@@ -9,6 +9,4 @@ func _ready() -> void:
 
 
 func refresh_timer() -> void:
-	var minutes = score.seconds / 60
-	var seconds = score.seconds % 60
-	text = "%d:%02d" % [minutes, seconds]
+	text = score.get_seconds_as_text()

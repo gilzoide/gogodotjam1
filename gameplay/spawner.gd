@@ -19,6 +19,7 @@ func spawn_mob() -> void:
 func reset() -> void:
 	for i in range(get_child_count() - 1, 0, -1):
 		var mob = get_child(i)
+		mob.disconnect("screen_exited", self, "_on_mob_screen_exited")
 		remove_child(mob)
 		mob.queue_free()
 	_timer.start()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://gameplay/gameplay.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/parede.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://gameplay/spawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://gameplay/pinch_hint.tscn" type="PackedScene" id=6]
 [ext_resource path="res://main_theme.tres" type="Theme" id=7]
+[ext_resource path="res://gameplay/gameover_popup.tscn" type="PackedScene" id=8]
 
 [node name="Gameplay" type="Control"]
 anchor_right = 1.0
@@ -70,6 +71,7 @@ __meta__ = {
 
 [node name="PinchHint" parent="InputHintPosition" instance=ExtResource( 6 )]
 
+[node name="GameOverPopup" parent="." instance=ExtResource( 8 )]
+
 [connection signal="hit_mob" from="BallPosition/Ball" to="." method="_on_Ball_hit_mob"]
 [connection signal="timeout" from="SecondTimer" to="." method="_on_SecondTimer_timeout"]
-[connection signal="pinch_detected" from="InputHintPosition/PinchHint" to="." method="_on_PinchHint_pinch_detected" flags=6]

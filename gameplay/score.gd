@@ -20,3 +20,7 @@ func set_seconds(value: int) -> void:
 	if value != seconds:
 		seconds = value
 		emit_signal("changed")
+
+
+func get_seconds_as_text() -> String:
+	return "%d:%02d" % [seconds / 60, seconds % 60]

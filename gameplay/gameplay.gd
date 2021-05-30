@@ -11,23 +11,29 @@ onready var _spawner = $Spawner
 
 func _ready() -> void:
 	GestureInputManager.pause_mode = Node.PAUSE_MODE_PROCESS
-	get_tree().paused = true
-	_pinch_hint.start()
+	reset_pre_game()
 
 
 func _on_SecondTimer_timeout() -> void:
 	score.seconds += 1
 
 
+func reset_pre_game() -> void:
+	get_tree().paused = true
+	_pinch_hint.start()
+	_pinch_hint.connect("pinch_detected", self, "_on_PinchHint_pinch_detected", [], CONNECT_ONESHOT)
+
+
 func start_game() -> void:
 	_player.position = Vector2.ZERO
+	score.reset()
 	_second_timer.start()
 	_spawner.reset()
 	get_tree().paused = false
 
 
 func end_game() -> void:
-	get_tree().paused = true
+	reset_pre_game()
 	# TODO: tela de fim e restart
 
 
