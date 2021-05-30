@@ -17,9 +17,11 @@ func spawn_mob() -> void:
 
 
 func reset() -> void:
-	for mob in get_children():
+	for i in range(get_child_count() - 1, 0, -1):
+		var mob = get_child(i)
 		remove_child(mob)
 		mob.queue_free()
+	_timer.start()
 
 
 func _on_mob_screen_exited(mob: Node2D) -> void:
