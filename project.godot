@@ -63,10 +63,8 @@ GestureInputManager="*res://addons/Godot-Touch-Input-Manager/InputManager.gd"
 window/size/width=480
 window/size/height=720
 window/handheld/orientation="sensor_portrait"
-
-[input_devices]
-
-pointing/emulate_mouse_from_touch=false
+window/stretch/mode="2d"
+window/stretch/aspect="keep_width"
 
 [layer_names]
 
