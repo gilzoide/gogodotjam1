@@ -19,12 +19,15 @@ func spawn_mob() -> void:
 func reset() -> void:
 	for i in range(get_child_count() - 1, 0, -1):
 		var mob = get_child(i)
-		mob.disconnect("screen_exited", self, "_on_mob_screen_exited")
-		remove_child(mob)
-		mob.queue_free()
+		_remove_mob(mob)
 	_timer.start()
 
 
-func _on_mob_screen_exited(mob: Node2D) -> void:
+func _on_mob_screen_exited(mob: Node) -> void:
+	_remove_mob(mob)
+
+
+func _remove_mob(mob: Node) -> void:
+	mob.disconnect("screen_exited", self, "_on_mob_screen_exited")
 	remove_child(mob)
 	mob.queue_free()

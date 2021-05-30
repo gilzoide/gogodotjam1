@@ -143,5 +143,17 @@ anchor_bottom = 1.0
 margin_left = -48.0
 margin_top = -48.0
 
+[node name="PauseButton" type="ToolButton" parent="."]
+pause_mode = 2
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -100.0
+margin_right = -50.0
+margin_bottom = 50.0
+focus_mode = 0
+mouse_filter = 1
+text = "⏸"
+
 [connection signal="hit_mob" from="BallPosition/Ball" to="." method="_on_Ball_hit_mob"]
 [connection signal="timeout" from="SecondTimer" to="." method="_on_SecondTimer_timeout"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]
