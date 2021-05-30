@@ -20,6 +20,7 @@ func reset() -> void:
 	for i in range(get_child_count() - 1, 0, -1):
 		var mob = get_child(i)
 		_remove_mob(mob)
+	randomize()
 	_timer.start()
 
 
