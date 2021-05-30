@@ -2,7 +2,7 @@ extends Control
 
 export(Resource) var gameplay_score = preload("res://gameplay/gameplay_score.tres")
 
-onready var _current_timer = $VBoxContainer/HBoxContainer/CurrentTimer
+onready var _current_timer = $VBoxContainer/CurrentTimer/Label
 
 
 func _notification(what: int) -> void:
