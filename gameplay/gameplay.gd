@@ -4,9 +4,10 @@ export(Resource) var score = preload("res://gameplay/gameplay_score.tres")
 export(float) var gameover_restart_delay = 1
 
 var _is_running = false
+var _pinch_hint
 
 onready var _gameover_popup = $GameOverPopup
-onready var _pinch_hint = $InputHintPosition/PinchHint
+onready var _pinch_hint_position = $InputHintPosition
 onready var _player = $BallPosition/Ball
 onready var _second_timer = $SecondTimer
 onready var _spawner = $Spawner
@@ -14,6 +15,11 @@ onready var _spawner = $Spawner
 
 func _ready() -> void:
 	GestureInputManager.pause_mode = Node.PAUSE_MODE_PROCESS
+	if OS.has_touchscreen_ui_hint():
+		_pinch_hint = load("res://gameplay/pinch_hint.tscn").instance()
+	else:
+		_pinch_hint = load("res://gameplay/mouse_hint.tscn").instance()
+	_pinch_hint_position.add_child(_pinch_hint)
 	reset_pre_game()
 
 
