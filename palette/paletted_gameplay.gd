@@ -1,13 +1,13 @@
 extends Control
 
 const PALETTES = PoolColorArray([
-	Color.white, Color.black,
-	Color("#F1CD36"), Color("#354A5F"),
-	Color("#97BC62"), Color("#2C5F2D"),
-	Color("#F0EDCC"), Color("#02343F"),
-	Color("#C7D3D4"), Color("#603F83"),
-	Color("#ADEFD1"), Color("#00203F"),
-	Color("#CE4A7E"), Color("#1C1C1B"),
+	Color("#FFFFFF"), Color("#000000"),  # White on Black
+	Color("#F1CD36"), Color("#354A5F"),  # Yellow on Blue (FoG)
+	Color("#97BC62"), Color("#2C5F2D"),  # Green on darker Green (Gameboy)
+	Color("#F0EDCC"), Color("#02343F"),  # 
+	Color("#C7D3D4"), Color("#603F83"),  # White-ish on Purple
+	Color("#ADEFD1"), Color("#00203F"),  # 
+	Color("#CE4A7E"), Color("#1C1C1B"),  # Pink on Brown
 ])
 
 export(Resource) var settings = preload("res://settings/default_settings.tres")
