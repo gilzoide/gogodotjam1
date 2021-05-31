@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://gameplay/gameplay.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/parede.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://gameplay/gameover_popup.tscn" type="PackedScene" id=8]
 [ext_resource path="res://gameplay/alga.tscn" type="PackedScene" id=9]
 [ext_resource path="res://sounds/theme.ogg" type="AudioStream" id=10]
+[ext_resource path="res://gameplay/random_bubble.tscn" type="PackedScene" id=11]
 
 [node name="Gameplay" type="Control"]
 anchor_right = 1.0
@@ -60,30 +61,6 @@ __meta__ = {
 margin_left = 75.0
 margin_right = -75.0
 mouse_filter = 2
-
-[node name="InputHintPosition" type="Control" parent="."]
-pause_mode = 2
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_top = -128.0
-margin_bottom = -128.0
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GameOverPopup" parent="." instance=ExtResource( 8 )]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -150.0
-margin_top = -100.0
-margin_right = 150.0
-margin_bottom = 100.0
 
 [node name="Algas" type="Control" parent="."]
 pause_mode = 2
@@ -142,6 +119,27 @@ anchor_bottom = 1.0
 margin_left = -48.0
 margin_top = -48.0
 
+[node name="RandomBubble" parent="." instance=ExtResource( 11 )]
+margin_left = 66.0
+margin_top = 16.0
+margin_right = -66.0
+margin_bottom = -16.0
+min_delay = 4.0
+max_delay = 10.0
+
+[node name="InputHintPosition" type="Control" parent="."]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_top = -128.0
+margin_bottom = -128.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PauseButton" type="ToolButton" parent="."]
 pause_mode = 2
 anchor_left = 1.0
@@ -155,6 +153,17 @@ text = "⏸"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="GameOverPopup" parent="." instance=ExtResource( 8 )]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -100.0
+margin_right = 150.0
+margin_bottom = 100.0
 
 [node name="PauseMenu" parent="." instance=ExtResource( 6 )]
 visible = false
@@ -170,7 +179,7 @@ margin_bottom = 99.0
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 10 )
-volume_db = -5.0
+volume_db = -7.0
 autoplay = true
 bus = "BGM"
 
