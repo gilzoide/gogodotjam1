@@ -6,8 +6,8 @@
 
 [node name="PauseMenu" type="PanelContainer"]
 pause_mode = 2
-margin_right = 154.0
-margin_bottom = 147.0
+margin_right = 182.0
+margin_bottom = 198.0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -17,23 +17,23 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 16.0
 margin_top = 16.0
-margin_right = 138.0
+margin_right = 166.0
 margin_bottom = 182.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 122.0
+margin_right = 150.0
 margin_bottom = 33.0
 text = "BAIACU"
 align = 1
 
 [node name="HSeparator1" type="HSeparator" parent="VBoxContainer"]
 margin_top = 37.0
-margin_right = 122.0
+margin_right = 150.0
 margin_bottom = 41.0
 
 [node name="MuteButton" type="Button" parent="VBoxContainer"]
 margin_top = 45.0
-margin_right = 122.0
+margin_right = 150.0
 margin_bottom = 84.0
 toggle_mode = true
 text = "🔊"
@@ -41,20 +41,20 @@ flat = true
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
 margin_top = 88.0
-margin_right = 122.0
+margin_right = 150.0
 margin_bottom = 92.0
 
 [node name="Authors" type="RichTextLabel" parent="VBoxContainer"]
 margin_top = 96.0
-margin_right = 122.0
+margin_right = 150.0
 margin_bottom = 166.0
-rect_min_size = Vector2( 120, 70 )
+rect_min_size = Vector2( 150, 70 )
 custom_fonts/normal_font = ExtResource( 3 )
 bbcode_enabled = true
 bbcode_text = "🎨 [url=https://elsenyh.itch.io]Elsenyh[/url]
-⌨ [url=https://gilzoide.itch.io/]gilzoide[/url]"
+⌨🎤 [url=https://gilzoide.itch.io/]gilzoide[/url]"
 text = "🎨 Elsenyh
-⌨ gilzoide"
+⌨🎤 gilzoide"
 scroll_active = false
 
 [connection signal="toggled" from="VBoxContainer/MuteButton" to="." method="_on_MuteButton_toggled"]
