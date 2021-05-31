@@ -2,16 +2,19 @@ extends Control
 
 export(Resource) var score = preload("res://gameplay/gameplay_score.tres")
 export(float) var gameover_restart_delay = 1
+export(float) var pause_bgm_fade_duration = 0.3
 
 var _is_running = false
 var _pinch_hint
 
+onready var _bgm = $BGM
 onready var _gameover_popup = $GameOverPopup
 onready var _pause_menu = $PauseMenu
 onready var _pinch_hint_position = $InputHintPosition
 onready var _player = $BallPosition/Ball
 onready var _second_timer = $SecondTimer
 onready var _spawner = $Spawner
+onready var _tween = $Tween
 
 
 func _ready() -> void:
@@ -67,8 +70,15 @@ func _on_PauseButton_pressed() -> void:
 	if _is_running:
 		get_tree().paused = true
 	_pause_menu.show_modal()
+	_tween.interpolate_property(_bgm, "pitch_scale", 1.0, 0.1, pause_bgm_fade_duration, Tween.TRANS_LINEAR)
+	_tween.start()
+	yield(_tween, "tween_completed")
+	_bgm.stream_paused = true
 
 
 func _on_pause_menu_modal_closed() -> void:
 	if _is_running:
 		get_tree().paused = false
+	_tween.interpolate_property(_bgm, "pitch_scale", 0.1, 1.0, pause_bgm_fade_duration, Tween.TRANS_LINEAR)
+	_tween.start()
+	_bgm.stream_paused = false

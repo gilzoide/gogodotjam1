@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://gameplay/gameplay.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/parede.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://main_theme.tres" type="Theme" id=7]
 [ext_resource path="res://gameplay/gameover_popup.tscn" type="PackedScene" id=8]
 [ext_resource path="res://gameplay/alga.tscn" type="PackedScene" id=9]
+[ext_resource path="res://sounds/theme.ogg" type="AudioStream" id=10]
 
 [node name="Gameplay" type="Control"]
 anchor_right = 1.0
@@ -165,6 +166,16 @@ margin_left = -96.0
 margin_top = -73.5
 margin_right = 96.0
 margin_bottom = 73.5
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 10 )
+volume_db = -5.0
+autoplay = true
+bus = "BGM"
+
+[node name="Tween" type="Tween" parent="."]
+pause_mode = 2
 
 [connection signal="hit_mob" from="BallPosition/Ball" to="." method="_on_Ball_hit_mob"]
 [connection signal="timeout" from="SecondTimer" to="." method="_on_SecondTimer_timeout"]
