@@ -7,7 +7,7 @@
 [node name="PauseMenu" type="PanelContainer"]
 pause_mode = 2
 margin_right = 182.0
-margin_bottom = 198.0
+margin_bottom = 231.0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -18,7 +18,8 @@ __meta__ = {
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 166.0
-margin_bottom = 182.0
+margin_bottom = 217.0
+custom_constants/separation = 16
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 margin_right = 150.0
@@ -27,28 +28,27 @@ text = "BAIACU"
 align = 1
 
 [node name="HSeparator1" type="HSeparator" parent="VBoxContainer"]
-margin_top = 37.0
+margin_top = 49.0
 margin_right = 150.0
-margin_bottom = 41.0
+margin_bottom = 53.0
 
 [node name="MuteButton" type="Button" parent="VBoxContainer"]
-margin_top = 45.0
+margin_top = 69.0
 margin_right = 150.0
-margin_bottom = 84.0
+margin_bottom = 110.0
 toggle_mode = true
 text = "🔊"
-flat = true
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
-margin_top = 88.0
+margin_top = 126.0
 margin_right = 150.0
-margin_bottom = 92.0
+margin_bottom = 130.0
 
 [node name="Authors" type="RichTextLabel" parent="VBoxContainer"]
-margin_top = 96.0
+margin_top = 146.0
 margin_right = 150.0
-margin_bottom = 166.0
-rect_min_size = Vector2( 150, 70 )
+margin_bottom = 201.0
+rect_min_size = Vector2( 150, 55 )
 custom_fonts/normal_font = ExtResource( 3 )
 bbcode_enabled = true
 bbcode_text = "🎨 [url=https://elsenyh.itch.io]Elsenyh[/url]
