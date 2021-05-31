@@ -25,3 +25,5 @@ render_target_update_mode = 3
 audio_listener_enable_2d = true
 
 [node name="Gameplay" parent="Viewport" instance=ExtResource( 1 )]
+
+[node name="Tween" type="Tween" parent="."]
