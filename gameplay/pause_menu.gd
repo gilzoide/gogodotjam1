@@ -1,5 +1,7 @@
 extends Control
 
+const PalettedGameplay = preload("res://palette/paletted_gameplay.gd")
+
 export(Resource) var settings = preload("res://settings/default_settings.tres")
 
 onready var _mute_button = $VBoxContainer/MuteButton
@@ -22,3 +24,7 @@ func _on_MuteButton_toggled(button_pressed: bool) -> void:
 
 func _refresh_text() -> void:
 	_mute_button.text = "🔇" if settings.audio_mute else "🔊"
+
+
+func _on_PaletteButton_pressed() -> void:
+	settings.palette_index = (settings.palette_index + 1) % PalettedGameplay.PALETTES.size()

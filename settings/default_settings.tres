@@ -5,3 +5,4 @@
 [resource]
 script = ExtResource( 1 )
 audio_mute = false
+palette_index = 0

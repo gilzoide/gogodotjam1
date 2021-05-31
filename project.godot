@@ -52,7 +52,7 @@ _global_script_class_icons={
 
 config/name="Baiacu"
 config/description="A game about growing and shrinking a blowfish using pinch gesture or the mouse wheel."
-run/main_scene="res://gameplay/gameplay.tscn"
+run/main_scene="res://palette/paletted_gameplay.tscn"
 config/icon="res://icon.png"
 
 [autoload]
