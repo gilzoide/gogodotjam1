@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/parede.wav-fac894058e74798fad3f233f9ce4b96d.sample"
+
+[deps]
+
+source_file="res://sounds/parede.wav"
+dest_files=[ "res://.import/parede.wav-fac894058e74798fad3f233f9ce4b96d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

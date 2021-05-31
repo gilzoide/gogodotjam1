@@ -10,8 +10,9 @@ export(float) var size = 100
 export(float) var min_size = 50
 export(float) var max_size = 1000
 
-var _movement = Vector2.LEFT
 var _angular_movement = -1
+var _movement = Vector2.LEFT
+onready var _audio_player = $AudioStreamPlayer2D
 onready var _sprite = $Sprite
 
 
@@ -31,6 +32,9 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(_movement * speed * delta)
 	if collision:
+		if not _audio_player.playing:
+			_audio_player.pitch_scale = 1 - inverse_lerp(min_size, max_size, size) * 0.5
+			_audio_player.play()
 		_movement.x = -_movement.x
 		_angular_movement = -_angular_movement
 
