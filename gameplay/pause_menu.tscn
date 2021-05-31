@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://gameplay/pause_menu.gd" type="Script" id=2]
+
+[node name="PauseMenu" type="PanelContainer"]
+pause_mode = 2
+margin_right = 192.0
+margin_bottom = 139.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 176.0
+margin_bottom = 131.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 160.0
+margin_bottom = 33.0
+text = "BAIACU"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 37.0
+margin_right = 160.0
+margin_bottom = 41.0
+
+[node name="Authors" type="RichTextLabel" parent="VBoxContainer"]
+margin_top = 45.0
+margin_right = 160.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 160, 70 )
+bbcode_enabled = true
+bbcode_text = "🎨 [url=https://elsenyh.itch.io]Elsenyh[/url]
+⌨ [url=https://gilzoide.itch.io/]gilzoide[/url]"
+text = "🎨 Elsenyh
+⌨ gilzoide"
+scroll_active = false
+
+[connection signal="meta_clicked" from="VBoxContainer/Authors" to="." method="_on_meta_clicked"]

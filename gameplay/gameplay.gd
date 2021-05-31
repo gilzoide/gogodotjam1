@@ -7,6 +7,7 @@ var _is_running = false
 var _pinch_hint
 
 onready var _gameover_popup = $GameOverPopup
+onready var _pause_menu = $PauseMenu
 onready var _pinch_hint_position = $InputHintPosition
 onready var _player = $BallPosition/Ball
 onready var _second_timer = $SecondTimer
@@ -20,6 +21,8 @@ func _ready() -> void:
 	else:
 		_pinch_hint = load("res://gameplay/mouse_hint.tscn").instance()
 	_pinch_hint_position.add_child(_pinch_hint)
+	_pause_menu.set_as_toplevel(true)
+	var _err = _pause_menu.connect("modal_closed", self, "_on_pause_menu_modal_closed")
 	reset_pre_game()
 
 
@@ -62,4 +65,10 @@ func _on_PinchHint_pinch_detected() -> void:
 
 func _on_PauseButton_pressed() -> void:
 	if _is_running:
-		get_tree().paused = not get_tree().paused
+		get_tree().paused = true
+	_pause_menu.show_modal()
+
+
+func _on_pause_menu_modal_closed() -> void:
+	if _is_running:
+		get_tree().paused = false
