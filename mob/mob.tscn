@@ -17,4 +17,4 @@ polygon = PoolVector2Array( -12.6535, -24.4637, 11.6064, -24.7016, -0.0478516, 2
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 rect = Rect2( -16, -32, 32, 64 )
 
-[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_screen_exited"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_screen_exited" flags=3]
