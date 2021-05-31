@@ -42,6 +42,12 @@ margin_right = 32.0
 margin_bottom = 33.0
 text = "📈"
 
+[node name="MiojoIcon" type="Label" parent="VBoxContainer/CurrentTimer"]
+visible = false
+margin_right = 33.0
+margin_bottom = 33.0
+text = "🍝"
+
 [node name="Icon" type="Label" parent="VBoxContainer/CurrentTimer"]
 margin_right = 32.0
 margin_bottom = 33.0

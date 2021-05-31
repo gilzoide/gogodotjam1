@@ -1,6 +1,7 @@
 extends Control
 
 const Score = preload("res://gameplay/score.gd")
+const MIOJO_TIME = 3 * 60
 
 export(Resource) var gameplay_score = preload("res://gameplay/gameplay_score.tres")
 export(Resource) var highscore = preload("res://gameplay/highscore.tres")
@@ -9,6 +10,7 @@ export(String) var highscore_save_path = "user://highscore.res"
 onready var _current_label = $VBoxContainer/CurrentTimer/Label
 onready var _greater_icon = $VBoxContainer/CurrentTimer/GreaterIcon
 onready var _highscore_label = $VBoxContainer/MaxTimer/Label
+onready var _miojo_icon = $VBoxContainer/CurrentTimer/MiojoIcon
 
 
 func _ready() -> void:
@@ -31,5 +33,6 @@ func _appeared() -> void:
 		_greater_icon.visible = true
 	else:
 		_greater_icon.visible = false
+	_miojo_icon.visible = gameplay_score.seconds > MIOJO_TIME
 	_current_label.text = gameplay_score.get_seconds_as_text()
 	_highscore_label.text = highscore.get_seconds_as_text()
