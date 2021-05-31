@@ -179,7 +179,6 @@ margin_bottom = 116.5
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 10 )
-autoplay = true
 bus = "BGM"
 
 [node name="Tween" type="Tween" parent="."]

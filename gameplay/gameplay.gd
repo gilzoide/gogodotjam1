@@ -27,6 +27,8 @@ func _ready() -> void:
 	_pause_menu.set_as_toplevel(true)
 	var _err = _pause_menu.connect("modal_closed", self, "_on_pause_menu_modal_closed")
 	reset_pre_game()
+	
+	_bgm.call_deferred("play")
 
 
 func _on_SecondTimer_timeout() -> void:
