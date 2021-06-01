@@ -54,6 +54,8 @@ config/name="Baiacu"
 config/description="A game about growing and shrinking a blowfish using pinch gesture or the mouse wheel."
 run/main_scene="res://palette/paletted_gameplay.tscn"
 config/icon="res://icon.png"
+config/macos_native_icon="res://icon.icns"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
@@ -64,7 +66,7 @@ GestureInputManager="*res://addons/Godot-Touch-Input-Manager/InputManager.gd"
 window/size/width=480
 window/size/height=720
 window/handheld/orientation="sensor_portrait"
-window/stretch/mode="2d"
+window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 
 [layer_names]
@@ -76,11 +78,31 @@ window/stretch/aspect="keep_width"
 [physics]
 
 common/enable_pause_aware_picking=true
+common/enable_object_picking=false
 
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+quality/directional_shadow/size=256
+quality/directional_shadow/size.mobile=256
+quality/shadow_atlas/size=256
+quality/shadow_atlas/size.mobile=256
+quality/shadow_atlas/cubemap_size=64
+quality/shadow_atlas/quadrant_0_subdiv=0
+quality/shadow_atlas/quadrant_1_subdiv=0
+quality/shadow_atlas/quadrant_2_subdiv=0
+quality/shadow_atlas/quadrant_3_subdiv=0
+quality/shadows/filter_mode=0
+quality/reflections/texture_array_reflections=false
+quality/reflections/high_quality_ggx=false
+quality/reflections/irradiance_max_size=32
+2d/options/ninepatch_mode=0
 environment/default_clear_color=Color( 0, 0, 0, 1 )
+quality/reflections/atlas_size=4
+quality/reflections/atlas_subdiv=1
 environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=false
