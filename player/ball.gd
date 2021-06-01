@@ -12,6 +12,7 @@ export(float) var max_size = 1000
 
 var _angular_movement = -1
 var _movement = Vector2.LEFT
+onready var _animation_player = $AnimationPlayer
 onready var _audio_player = $AudioStreamPlayer2D
 onready var _sprite = $Sprite
 
@@ -48,4 +49,5 @@ func set_size(value: float) -> void:
 
 func _on_Area2D_body_entered(body: PhysicsBody2D) -> void:
 	if body.get_collision_layer_bit(LAYER_MOB_BIT):
+		_animation_player.play("Gameover")
 		emit_signal("hit_mob", body)
