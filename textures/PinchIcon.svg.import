@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tap_finger.svg-225ee66a101209fdd817445e7af12262.stex"
+path="res://.import/PinchIcon.svg-b5490a3ef1ecaf95861a4ea2259dd6ac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/tap_finger.svg"
-dest_files=[ "res://.import/tap_finger.svg-225ee66a101209fdd817445e7af12262.stex" ]
+source_file="res://textures/PinchIcon.svg"
+dest_files=[ "res://.import/PinchIcon.svg-b5490a3ef1ecaf95861a4ea2259dd6ac.stex" ]
 
 [params]
 
@@ -31,4 +31,4 @@ process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true
-svg/scale=1.0
+svg/scale=4.0
