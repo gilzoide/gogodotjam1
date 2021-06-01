@@ -13,6 +13,12 @@ func _notification(what: int) -> void:
 		_refresh_text()
 
 
+func _input(event: InputEvent) -> void:
+	if is_visible_in_tree() and event is InputEventScreenPinch:
+		hide()
+		emit_signal("modal_closed")
+
+
 func _on_meta_clicked(meta) -> void:
 	var _err = OS.shell_open(meta)
 
