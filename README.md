@@ -1,5 +1,5 @@
 # Baiacu
-Game made with [Godot](https://godotengine.org/) for the [Go Godot Jam](https://gogodotjam.com/).
+Game made with [Godot](https://godotengine.org/) for the [Go Godot Jam](https://itch.io/jam/go-godot-jam).
 
 Baiacu is available for download and can be played directly in your browser here: https://gilzoide.itch.io/baiacu
 
